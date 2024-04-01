@@ -12,13 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <!-- cdn aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- cdn swipper -->
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- css -->
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-   <!-- navbar -->
-   <nav id="myNavbar" class="navbar navbar-expand-lg nav-custom">
-    <div class="container-fluid">
+  
+   <nav id="myNavbar" class="navbar navbar-expand-lg nav-custom ">
+    <div class="container-fluid  ">
       <a class="navbar-brand" href="#">
         <img src="./assett/logo-nero.png" alt="logo sito" class="img-fluid img-logo">
       </a>
@@ -63,7 +65,7 @@
 
    <!-- header -->
    <header class="container-fluid">
-    <div class="row">
+    <div class="row ">
       <div class="col-12 col-md-6 forms">
         <h2>Tutto quello che desideri è qui...</h2>
         <form class="d-flex" role="search">
@@ -73,7 +75,7 @@
         
       </div>
       <div class="col-12 col-md-6 text-center">
-        <img class="logoHeader" src="./assett/logo-nero.png" alt="logo sito">
+        <img class="logoHeader img-fluid" src="./assett/logo-nero.png" alt="logo sito">
         <h1 >Shop-House</h1>
       </div>
     </div>
@@ -82,6 +84,7 @@
   <!-- fine header -->
 
   <!-- corpo del sito -->
+ 
 
   <main>
     <section class="container">
@@ -95,9 +98,92 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolores iure atque rerum impedit sapiente quas numquam temporibus cum a sequi, autem necessitatibus laboriosam blanditiis velit. Iure placeat quae officia?
           </p>
         </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center" data-aos="flip-right"data-aos-duration="3000" >
+        <div class="col-12 col-md-6 d-flex justify-content-center img-storia" data-aos="flip-right"data-aos-duration="3000" >
           <img src="./assett/negozio.jpg" alt="immagine city" class="img-fluid">
 
+        </div>
+      </div>
+
+    </section>
+     <section class="container">
+    <div class="row">
+      <div class="col-12 col-md-12">
+        <h2 class="text-center mt-5 h2-forza ">
+          La nostra forza
+        </h2>
+      </div>
+    </div>
+    <div class="row mt-3 ">
+      <div class="col-12 col-md-4 d-flex  ">
+        <p class="lead"><span id="firstNumber" class="numbers">0</span>Clienti soddisfatti</p>
+      </div>
+      <div class="col-12 col-md-4 d-flex  ">
+        <p class="lead"><span id="secondNumber" class="numbers">0</span>Articoli consegnati</p>
+      </div>
+      <div class="col-12 col-md-4 d-flex  ">
+        <p class="lead"><span id="thirdNumber" class="numbers">0</span>Partners</p>
+      </div>
+    </div>
+    
+
+    </section>
+    <!-- carosello -->
+    <section class="container  mt-4">
+     <div class="row justify-content-center">
+        <div class="col-12 m-2">
+        <h2>Feedback</h2>
+        </div>
+
+        <div class="col-12 col-md-8 ">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <div class="parallax-bg";
+               data-swiper-parallax="-23%">
+              </div>
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+               
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+
+           
+             </div>
+        </div>
+      </div>
+    </section>
+    <!-- form -->
+    <section class="container mt-4">
+      <div class="row">
+        <div class="col-12 col-md-6  ">
+         <div>
+          <img src="./assett/form 2.jpg" alt="foto form" class="img-fluid">
+         </div>
+        </div>
+        <div class="col-12 col-md-6 bordoForm">
+          <h3 class=" mt-3">Inserisci la tua recensione</h3>
+          <div class="mt-4">
+            <label  for="userName">Nome</label>
+            <input id="userName" type="text" class="form-control">
+          </div>
+          <div>
+            <label for="userTitle">Titolo</label>
+            <input id="userTitle" type="text" class="form-control">
+          </div>
+          <div>
+            <label for="userDescription">Descrizione</label>
+            <input id="userDescription" type="text" class="form-control">
+          </div>
+          <div class="mt-3 d-flex justify-content-end">
+            <button id="addReviews" class="btn btn-custom">Invia</button>
+          </div>
+
+       
         </div>
       </div>
 
@@ -152,8 +238,9 @@
     <script>
       AOS.init();
     </script>
-       
-    <!-- js -->
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <!-- js personale -->
     <script src="./script.js"></script>
 
   </body>

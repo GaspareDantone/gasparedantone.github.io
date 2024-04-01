@@ -72,5 +72,152 @@ function changeNavbar(background , imglogo, color1, color2, color3 ) {
     
 }
 
+// chiamata asincrona si attiva quando si interseca una parte della pagina
+// setInterval(): crea un loop che non blocca il browser
+// clearInterval(): blocca il loop
+// interseptionOberserver() un oggetto del browser che fa iniziare una funzione nel momento che viene          intersecato un elemento dell html     
 
+let firstNumber = document.querySelector("#firstNumber");
+let secondNumber = document.querySelector("#secondNumber");
+let thirdNumber = document.querySelector("#thirdNumber");
+
+function createIntevarl(number , element , timing) {
+    let count = 0;
+
+    let interval = setInterval(()=>{
+        if (count < number) {
+            count++
+            element.innerHTML = count
+        }else{
+            clearInterval(interval);
+        }
+    },timing)
+};
+//  createIntevarl(2500 , firstNumber , 250);
+//  createIntevarl(5000 , secondNumber , 150);
+//  createIntevarl(70 , thirdNumber ,800);
+
+let confirm = false; 
+// confirm false mi serve per evitare che lo scroll continuo riattivi intersecting
+
+ let observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+       
+        if (entry.isIntersecting && confirm == false) {
+            createIntevarl(2500 , firstNumber , 250);
+            createIntevarl(5000 , secondNumber , 150);
+            createIntevarl(70 , thirdNumber ,800);
+            confirm = true
+
+            
+        }
+    })
+
+ });
+ observer.observe(firstNumber);
+
+// swiper js struttura carosello
+
+const swiper = new Swiper('.swiper', {
+    speed: 600,
+    parallax: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  
+   
+  });
+
+
+  let reviews = [
+    { name : "giusy" , title : "ottimo prodotto", description: "tutto perfetto come da descrizione"},
+    { name : "ale" , title : "bellissimo", description: "bellisisma esperienza"},
+    { name : "fenix" , title : "pessimo", description: "non tornero"},
+    { name : "argo" , title : "stupefacente", description: "comprero sempre qui"},
+    { name : "goku" , title : "top 10", description: "qualita' eccelsa"},
+    { name : "bulma" , title : "carissimo", description: "troppo povero per comprare qui"},
+
+  ];
+
+// creazione card
+
+  let swiperWrapper = document.querySelector(".swiper-wrapper")
+  let addReviews = document.querySelector("#addReviews");
+  let userName = document.querySelector("#userName");
+  let userTitle = document.querySelector("#userTitle");
+  let userDescription = document.querySelector("#userDescription");
+
+
+
+
+
+
+  reviews.forEach((review) =>{
+    let div = document.createElement('div');
+    div.classList.add('swiper-slide');
+    div.innerHTML = `
+    <div class="title" data-swiper-parallax="-300">${review.name}</div>
+    <div class="subtitle" data-swiper-parallax="-200">${review.title}</div>
+    <div class="text" data-swiper-parallax="-100">
+      <p>
+        ${review.description}
+      
+      </p>
+    </div>
+    `
+    swiperWrapper.appendChild(div);
+
+});
+
+
+
+
+function generateCard() {
+    swiperWrapper.innerHTML = '';
+    reviews.forEach((review) =>{
+        let div = document.createElement('div');
+        div.classList.add('swiper-slide');
+        div.innerHTML = `
+        <div class="title" data-swiper-parallax="-300">${review.name}</div>
+        <div class="subtitle" data-swiper-parallax="-200">${review.title}</div>
+        <div class="text" data-swiper-parallax="-100">
+          <p>
+            ${review.description}
+          
+          </p>
+        </div>
+        `
+        swiperWrapper.appendChild(div);
+    
+    });
+    
+}
+generateCard()
+
+
+
+
+addReviews.addEventListener("click", ()=>{
+    reviews.push({ name : userName.value , title : userTitle.value, description: userDescription.value})
+    generateCard();
+    userName.value ='';
+    userTitle.value = '';
+    userDescription.value = '';
+    // corregge le modifiche
+    swiper.update();
+
+})
+
+
+
+
+
+  
+            
+    
 

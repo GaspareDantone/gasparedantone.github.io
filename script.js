@@ -72,6 +72,9 @@ function changeNavbar(background , imglogo, color1, color2, color3 ) {
     
 }
 
+
+
+
 // chiamata asincrona si attiva quando si interseca una parte della pagina
 // setInterval(): crea un loop che non blocca il browser
 // clearInterval(): blocca il loop

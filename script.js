@@ -6,6 +6,7 @@ let logo = document.querySelector(".img-logo");
 
 
 
+
 console.dir(logo);
 
 
@@ -71,6 +72,17 @@ function changeNavbar(background , imglogo, color1, color2, color3 ) {
         })
     
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

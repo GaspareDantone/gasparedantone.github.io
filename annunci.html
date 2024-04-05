@@ -67,7 +67,7 @@
     <div class="container titleAnnunci">
         <div class="row">
             <div class="col-12 text-center">
-                <h1>I NOSTRI PRODOTTI</h1>
+                <h1 class="titoloProdotti">I NOSTRI PRODOTTI</h1>
 
             </div>
         </div>
@@ -87,10 +87,10 @@
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div id="categoryWrapper" class="accordion-body">
-                            <!-- FOR CHECK -->
+                            <!-- FORm CHECK -->
                            
                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="category" id="flexRadioDefault2" checked>
+                                <input class="form-check-input" type="radio" name="category" id="all" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                   Tutte le categorie
                                 </label>
@@ -102,7 +102,7 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Accordion Item #2
+                          PREZZO
                         </button>
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -114,7 +114,7 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Accordion Item #3
+                          PAROLA
                         </button>
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -126,17 +126,11 @@
                   </div>
 
             </div>
-            <div id="cardWrapper" class="col-12 col-md-8">
-                <div class="card" style="width: 18rem;">
-                    <img src="immagine" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <p>prezzo</p>
-                    </div>
-                  </div>
-
+            <div id="cardWrapper" class="col-12 col-md-8 d-flex flex-wrap justify-content-evenly">
+                <!-- card prodotti creati con js -->
             </div>
+
+          </div>
         </div>
     </section>
 

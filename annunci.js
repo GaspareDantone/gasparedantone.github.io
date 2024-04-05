@@ -58,6 +58,8 @@ fetch("./annunci.json").then((response)=>response.json()).then((data)=>{
     let categoryWrapper = document.querySelector('#categoryWrapper');
     let cardWrapper = document.querySelector('#cardWrapper');
 
+    
+
 
 
 
@@ -93,9 +95,66 @@ fetch("./annunci.json").then((response)=>response.json()).then((data)=>{
     setCategory()
 
 
-    function name(params) {
+    function showCards(array) {
+
+
+        array.sort((a,b)=> a.price - b.price );
+
+
+        cardWrapper.innerHTML = '';
+
+        array.forEach((annuncio)=>{
+            let div = document.createElement('div');
+            div.classList.add("card", "mb-4");
+            div.style.width = "16rem";
+            div.innerHTML = `
+            <img src="${annuncio.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">${annuncio.name}</h5>
+                      <p class="card-text">${annuncio.category}</p>
+                      <p>${annuncio.price}</p>
+                    </div>
+            
+         `
+            cardWrapper.appendChild(div);
+            
+            
+            
+        })
         
     }
+
+    showCards(data);
+
+    // imput radio
+    let radios = document.querySelectorAll(".form-check-input");
+
+    function filterByCategory(params) {
+        let checked = Array.from(radios).find((button)=> button.checked);
+        let categoria = checked.id;
+
+        if (categoria !="all") {
+            let filtered = data.filter((annuncio) => annuncio.category == categoria);
+            showCards(filtered);
+            
+        }else{
+            showCards(data);
+        }
+
+
+
+
+        
+    }
+    filterByCategory();
+
+    radios.forEach((button)=>{
+        button.addEventListener("click",()=>{
+            filterByCategory()
+        })
+    })
+
+
 
 
 

@@ -17,7 +17,7 @@
     <!-- css -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light-mode ">
     <nav id="myNavbar" class="navbar navbar-expand-lg nav-custom ">
         
         <div class="container-fluid  ">
@@ -55,6 +55,9 @@
                         <a class="nav-link" href="#">
                             <i class="fa-solid fa-user"></i>
                         </a>
+                    </li>
+                    <li>
+                      <button id="btnDarkMode" class="btn"> <i class="fa-regular fa-moon"></i></button>
                     </li>
                 </ul>
                 
@@ -107,7 +110,8 @@
                       </h2>
                       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                         <input id="inputPrice" class="w-100" type="range" >
+                         <p id="priceNumbers"></p>
                         </div>
                       </div>
                     </div>
@@ -119,7 +123,7 @@
                       </h2>
                       <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          <input id="inputWord" class="form-control" type="text">
                         </div>
                       </div>
                     </div>

@@ -229,6 +229,60 @@ addReviews.addEventListener("click", ()=>{
 })
 
 
+// dark mode
+
+let btnDarkMode = document.querySelector("#btnDarkMode");
+let isClicket = true;
+
+btnDarkMode.addEventListener("click",()=>{
+
+  if(isClicket){
+    document.documentElement.style.setProperty('--light', 'rgb(26,26,26)');
+    document.documentElement.style.setProperty('--dark', 'rgb(250,250,250)');
+    btnDarkMode.innerHTML = `<i class="fa-regular fa-sun"></i>`;
+    isClicket = false;
+    localStorage.setItem( 'mode' , 'dark' );
+  }else{ 
+    document.documentElement.style.setProperty('--light', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--dark', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<i class="fa-regular fa-moon"></i>`;
+    isClicket = true;
+    localStorage.setItem( 'mode' , 'light' );
+  
+   }
+})
+
+
+ let mode = localStorage.getItem('mode');
+
+
+ if (mode === 'dark'){
+   document.documentElement.style.setProperty('--light', 'rgb(26,26,26)');
+   document.documentElement.style.setProperty('--dark', 'rgb(250,250,250)');
+   btnDarkMode.innerHTML = `<i class="fa-regular fa-sun"></i>`;
+   isClicket = false;
+
+  
+ } else {
+   document.documentElement.style.setProperty('--light', 'rgb(250,250,250)');
+    document.documentElement.style.setProperty('--dark', 'rgb(26,26,26)');
+    btnDarkMode.innerHTML = `<i class="fa-regular fa-moon"></i>`;
+    isClicket = true;
+  
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

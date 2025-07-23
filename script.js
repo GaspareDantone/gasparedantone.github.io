@@ -16,39 +16,16 @@ window.addEventListener("scroll", ()=>{
     let scrolled = window.scrollY;
 
     if (scrolled > 0) {
-        // myNavbar.classList.add('nav-blur');
-        // logo.src ="http://127.0.0.1:5500/assett/logo-rosso.png";
-
-
-        // links.forEach((link)=>{
-        //     link.style.color = 'var(--white)';
-        //     link.addEventListener("mouseenter", ()=>{
-        //         link.style.borderBottom = '2px solid var(--red)'
-
-        //     })
-        //     link.addEventListener("mouseleave", ()=>{
-        //         link.style.borderBottom ="transparent"
-        //     })
-        // })
-        changeNavbar('nav-blur', 'logo-rosso', 'var(--white)', '2px solid var(--red)', 'trasparent' );
+        
+        changeNavbar('nav-blur', 'logo-rosso', "var(--white)", "2px solid var(--red)", "transparent" );
 
 
     }else{
 
         myNavbar.classList.remove('nav-blur');
-        // logo.src ="http://127.0.0.1:5500/assett/logo-nero.png";
-        // links.forEach((link)=>{
-        //     link.style.color = 'var(--black)';
-        //     link.addEventListener("mouseenter", ()=>{
-        //         link.style.borderBottom = '2px solid var(--red)'
+        
 
-        //     })
-        //     link.addEventListener("mouseleave", ()=>{
-        //         link.style.borderBottom ="transparent"
-        //     })
-        // })
-
-        changeNavbar('nav-custom', 'logo-nero', 'var(--black)', '2px solid var(--red)','transparent' );
+        changeNavbar('nav-custom', 'logo-nero', "var(--black)", "transparent" , );
     }
 
 
@@ -57,7 +34,7 @@ window.addEventListener("scroll", ()=>{
 
 function changeNavbar(background , imglogo, color1, color2, color3 ) {
     myNavbar.classList.add(background);
-        logo.src =`http://127.0.0.1:5500/assett/${imglogo}.png`;
+        logo.src =`/assett/${imglogo}.png`;
 
 
         links.forEach((link)=>{
@@ -75,6 +52,40 @@ function changeNavbar(background , imglogo, color1, color2, color3 ) {
 
 
 
+// let myNavbar = document.querySelector("#myNavbar");
+// let links = document.querySelectorAll(".nav-link");
+// let logo = document.querySelector(".img-logo");
+
+// // Aggiungi gli eventi UNA VOLTA SOLA
+// links.forEach((link) => {
+//   link.addEventListener("mouseenter", () => {
+//     link.style.borderBottom = "2px solid var(--red)";
+//   });
+//   link.addEventListener("mouseleave", () => {
+//     link.style.borderBottom = "transparent";
+//   });
+// });
+
+// window.addEventListener("scroll", () => {
+//   let scrolled = window.scrollY;
+
+//   if (scrolled > 0) {
+//     myNavbar.classList.remove("nav-custom");
+//     myNavbar.classList.add("nav-blur");
+//     changeNavbar("logo-rosso", "var(--white)");
+//   } else {
+//     myNavbar.classList.remove("nav-blur");
+//     myNavbar.classList.add("nav-custom");
+//     changeNavbar("logo-nero", "var(--black)");
+//   }
+// });
+
+// function changeNavbar(imglogo, textColor) {
+//   logo.src = `/assett/${imglogo}.png`; // ✅ path corretto
+//   links.forEach((link) => {
+//     link.style.color = textColor;
+//   });
+// }
 
 
 
